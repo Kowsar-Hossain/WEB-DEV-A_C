@@ -1,0 +1,41 @@
+#container {
+    height: 160px;
+    width: 80%;
+    background-color: azure;
+    border: 2px solid red;
+    position: relative;
+    left: 10%;
+    color: ivory;
+}
+
+h1 {
+    text-align: center;
+}
+
+#violet {
+    background-color: violet;
+}
+
+#black {
+    background-color: black;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#red {
+    background-color: red;
+}
