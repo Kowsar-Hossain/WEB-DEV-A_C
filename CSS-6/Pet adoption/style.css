@@ -1,0 +1,29 @@
+h2 {
+    color: orange;
+}
+
+span {
+    color: orange;
+}
+
+.card {
+    height: 460px;
+    width: 400px;
+    border: 2px solid black;
+}
+
+.image {
+    height: 200px;
+    width: 400px;
+}
+
+.pets {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media(max-width:400px) {
+    .pets {
+        flex-wrap: wrap;
+    }
+}
