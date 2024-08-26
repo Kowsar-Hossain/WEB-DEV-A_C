@@ -1,77 +1,37 @@
-.box {
-    height: 100px;
-    width: 300px;
-    background-color: pink;
-    /* animation-name: fontanimation;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0;
-    animation-iteration-count: 3;
-    animation-direction: normal; */
-    /* animation-name: coloranimate;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0;
-    animation-iteration-count: 3;
-    animation-direction: normal; */
-    /* animation-name: widthanimate;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0;
-    animation-iteration-count: infinite;
-    animation-direction: normal; */
-    /* Animation Shorthand */
-    animation: fontanimation 3s ease-in-out 1s infinite normal;
+h1 {
+    background-color: yellow;
+    border: 2px solid black;
 }
 
 
-/* @keyframes fontanimation {
-    from {
-        font-size: 20px;
-        background-color: green;
-        width: 10px;
-    }
-    to {
-        font-size: 40px;
-        background-color: blue;
-        width: 400px;
-    }
-} */
-
-
-/* @keyframes coloranimate {
-    from {
-        background-color: green;
-    }
-    to {
-        background-color: blue;
-    }
-} */
-
-
-/* @keyframes widthanimate {
-    from {
-        width: 10px;
-    }
-    to {
-        width: 400px;
-    }
-} */
-
-@keyframes fontanimation {
-    0% {
-        font-size: 20px;
-        background-color: green;
-        width: 10px;
-    }
-    50% {
-        font-size: 40px;
-        background-color: blue;
-        width: 400px;
-    }
-    100% {
-        font-size: 40px;
+/* @media(width: 400px) {
+    h1 {
         background-color: red;
-        width: 600px;
+        color: white;
+    }
+    div {
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+    }
+} */
+
+
+/* @media(min-width:400px) {
+    h1 {
+        background-color: green;
+    }
+} */
+
+
+/* @media(max-width:200px) {
+    h1 {
+        background-color: lawngreen;
+    }
+} */
+
+@media(min-width:200px) and (max-width: 400px) {
+    h1 {
+        background-color: red;
     }
 }
