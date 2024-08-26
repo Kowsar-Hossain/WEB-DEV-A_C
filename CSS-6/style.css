@@ -1,37 +1,23 @@
-h1 {
-    background-color: yellow;
+#container {
+    height: 400px;
+    width: 390px;
+    background-color: pink;
     border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-self: center;
 }
 
-
-/* @media(width: 400px) {
-    h1 {
-        background-color: red;
-        color: white;
-    }
-    div {
-        height: 100px;
-        width: 100px;
-        background-color: blue;
-    }
-} */
-
-
-/* @media(min-width:400px) {
-    h1 {
-        background-color: green;
-    }
-} */
-
-
-/* @media(max-width:200px) {
-    h1 {
-        background-color: lawngreen;
-    }
-} */
-
-@media(min-width:200px) and (max-width: 400px) {
-    h1 {
-        background-color: red;
-    }
+.letter {
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 10px;
+    margin-top: 15px;
 }
