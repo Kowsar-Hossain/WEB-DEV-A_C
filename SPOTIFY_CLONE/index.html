@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="logo.png">
+    <link rel="icon" href="./assets/logo.png">
     <title>Spotify - Web Player: Music for everyone</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -67,6 +67,8 @@
                 <p class="card-title">Top 50 - Global</p>
                 <p class="card-info">Your daily updates of the most played tracks...</P>
               </div>
+              <div class="card"></div>
+              <div class="card"></div>
             </div>
 
             <h2>Trending now near you</h2>
@@ -127,7 +129,24 @@
           </div>
         </div>
         <br><br><br><br><br><br><br><br><br><br><br><br>
-        <div class="music-player">Music Player</div>
+        <div class="music-player">
+          <div class="album"></div>
+          <div class="player">
+            <div class="player-controls">
+              <img src="./assets/player_icon1.png" class="player-controls-icon">
+              <img src="./assets/player_icon2.png" class="player-controls-icon">
+              <img src="./assets/player_icon3.png" class="player-controls-icon">
+              <img src="./assets/player_icon4.png" class="player-controls-icon">
+              <img src="./assets/player_icon5.png" class="player-controls-icon">
+            </div>
+            <div class="playback-bar">
+              <span class="curr-time">00:00</span>
+              <input type="range" min="0" max="100" class="progess-bar" step="1">
+              <span class="tot-time">3:33</span>
+            </div>
+          </div>
+          <div class="controls"></div>
+        </div>
     </div>
   </body>
 </html>
