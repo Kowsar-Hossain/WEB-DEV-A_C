@@ -1,170 +1,132 @@
-//Practice C1-Q1
+let msg = "     Hello    ";
+console.log(msg.trim()); //Trim method
 
-let age = 23;
-age + 2;
-console.log(age);
+let str = "  Kow sar  ";
+let newStr = str.trim();
+console.log(newStr);
 
-//Practice C1-Q2
+console.log(str.toUpperCase()); //toUpperCase Method KOW SAR
+console.log(str.toLowerCase()); //toLowerCase Method kow sar
 
-let math = 90;
-let phy = 80;
-let bangla = 100;
-let avg = (math + phy + bangla) / 3;
-console.log(avg);
+let strs = "  ILoveCoding"; //indexOf Method
+console.log(strs.indexOf("Love")); //1
+console.log(strs.indexOf("j")); //-1
+console.log(strs.indexOf("o")); //2
+console.log(strs.toUpperCase().trim()); //ILOVECODING
 
-//Practice C1-Q3
+let string = "ILoveCoding";
+console.log(string.slice(5)); //Coding
+console.log(string.slice(1, 4)); //Love
+console.log(string.slice(-1)); //length-1=10-1=9->g
 
-let num = 5;
-let newNum = num++;
-newNum = ++num;
-console.log(newNum);
 
-//Practice C1-Q3
+//replace
+console.log(string.replace("Love", "Do")); //IDoCoding
+console.log(string.replace("o", "x")); //ILxveCoding
 
-let name = "Kowsar Hossain";
-console.log(name.length);
 
-let firstName = "kowsar";
-console.log(firstName[0]);
-console.log(firstName[5]);
+//repeat
+console.log(string.repeat(2)); //ILoveCodingILoveCoding
 
-let fName = "apnacollege";
-let lName = 123;
-console.log(fName + lName);
+//Practice C3-Q1
+let massage = "help!";
+console.log(massage.trim().toUpperCase());
 
-let empty = "";
-console.log(empty.length);
-let space = " ";
-console.log(space.length);
+//Practice C3-Q2
+let name = "ApnaCollege";
+console.log(name.slice(4, 9)); //Colle
+console.log(name.indexOf("na")); //2
+console.log(name.replace("Apna", "Our")); //OurCollege
 
-//Template Literals
+//Practice C3-Q3
+console.log(name.slice(4).replace("l", "t")); //Cotlege
 
-let pencil = 10;
-let pen = 5;
-console.log(`The total price is : ${pencil+pen} taka`);
+//Array
+let students = ["Kowsar", "Manik", "Hossain"];
+console.log(students);
+let nums = [2, 3, 4, 5];
+console.log(nums[3]); //5
 
-// Conditional Statement
+//Visualizing Array
+let num = [2, 3, 6, 8];
+console.log(num);
+console.log([1, 2, 3, 4].length);
 
-console.log(`Before my if statement`);
-let ages = 17;
-if (ages >= 18) {
-    console.log(`You can vote`);
-    let a = 5;
-    console.log(a * 5);
+//Array Mutable
+let fruit = ["Mango", "Banana", "Apple"];
+fruit[1] = "Orange";
+fruit[10] = "Goava";
+console.log(fruit);
+
+//Array Method
+let cars = ["BMW", "Audi", "xuv"];
+cars.push("Toyota");
+console.log(cars);
+
+
+let followers = ["a", "b", "c"];
+let blocked = followers.shift();
+console.log(followers);
+
+//Practice C3-Q3
+let months = ["January", "July", "march", "august"];
+months.shift();
+months.shift();
+months.unshift("June");
+months.unshift("July");
+console.log(months);
+
+//Practice C3-Q4
+let month = ['January', 'July', 'march', 'august'];
+month.splice(0, 2, 'july', 'june');
+console.log(month);
+
+let lan = ['c', 'c++', 'html', 'javascript', 'python', 'c#', 'sql'];
+console.log(lan.reverse().indexOf('javascript'));
+
+//Practice C3-Q5
+let game = [
+    ['X', ' ', '0'],
+    [' ', 'X', ' '],
+    ['0', ' ', 'X']
+];
+console.log(game);
+
+//Assignment Qestion-1
+let array = [1, 2, 3, 4, 5];
+let n = 4;
+console.log(array.slice(0, n));
+
+//Assignment Qestion-2
+console.log(array.splice(1, 4));
+
+//Assignment Qestion-3
+let stri = '';
+if (stri.length == 0) {
+    console.log("String is blank");
 } else {
-    console.log(`You connot vote`);
+    console.log("Not Blank");
 }
-console.log(`Before my if statement`);
 
-//Practice C2-Q1
-//Traffic light System
-
-let color = "red";
-if (color == "red") {
-    console.log("STOP");
-} else if (color == "yellow") {
-    console.log("SLOW DOWN");
+//Assignment Qestion-4
+let char = "ApNaCollEge";
+let idx = 3;
+if (char[idx] == str[idx].toLowerCase()) {
+    console.log("Character is lowercase");
 } else {
-    console.log("GO");
+    console.log("character is not Lowercase");
 }
 
-//Practice C2-Q2
+//Assignment Qestion-5
+let akhi = "  Ak hi   ";
+console.log(akhi.trim());
 
-let size = "L";
-if (size == "XL") {
-    console.log(`Price is Rs. 250`);
-} else if (size == "L") {
-    console.log(`Price is Rs. 200`);
-} else if (size == "M") {
-    console.log(`Price is Rs. 100`);
+//Assignment Qestion-6
+let arr = [6, 4, 3, 8, 3, 7];
+let number = 7;
+if (arr.indexOf(number) != -1) {
+    console.log("Exist");
 } else {
-    console.log(`Price is Rs. 50`);
-}
-
-
-//Practice C2-Q3
-
-let str = "apple";
-if (str.length >= 3 && str[0] == "a") {
-    console.log('Good String');
-} else {
-    console.log(`Not Good string`);
-}
-
-
-//Practice C2-Q3
-
-let day = 4;
-
-switch (day) {
-    case 1:
-        console.log("Sunday");
-        break;
-    case 2:
-        console.log("Munday");
-        break;
-    case 3:
-        console.log("Tuesday");
-        break;
-    case 4:
-        console.log("Wednesday");
-        break;
-    case 5:
-        console.log("Thusday");
-        break;
-    case 6:
-        console.log("Friday");
-        break;
-    case 7:
-        console.log("Saturday");
-        break;
-    default:
-        console.log("Wrong day");
-}
-
-//Alert & Prompt
-
-//alert("something is wrong");
-// console.log("Simple msg");
-// console.error("This is an error msg");
-// console.warn("This is a warning msg");
-
-// let firstNames = prompt("Enter your name :");
-// console.log(firstNames);
-
-
-//Assignment solution Q1
-
-let number = 12890;
-if (number % 10 == 0) {
-    console.log("Good");
-} else {
-    console.log("Not Good");
-}
-
-//Assignment solution Q2
-
-let names = prompt("Please enter your name");
-let ag = prompt("Please enter your age");
-
-alert(`${names} is ${ag} years old`);
-
-//Assignment solution Q3
-
-let month = 2;
-switch (month) {
-    case 1:
-        console.log("January,February, March");
-        break;
-    case 2:
-        console.log("April,May,june");
-        break;
-    case 1:
-        console.log("July,August, September");
-        break;
-    case 4:
-        console.log("October,November, December");
-    default:
-        console.log("Its not any Quater");
+    console.log("Not Exist");
 
 }
