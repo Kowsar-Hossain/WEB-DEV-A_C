@@ -1,93 +1,125 @@
-//Objects Literals
-const student = {
-    name: "Kowsar",
-    age: 23,
-    gender: "Male",
-    marks: 94.4,
-    city: ["Rajshahi", "Sirajgonj"]
-};
-console.log(student);
-console.log(student["city"]);
-student.marks = "Dhaka";
-console.log(student.marks);
-console.log(student.gender);
+function hello() {
+    console.log("Hello");
+}
 
-const obj = {
-    1: "mango",
-    2: "Banana",
-    null: "C",
-    true: "A"
-};
-console.log(obj);
-console.log(obj["1"]);
+hello();
 
-//Object of Objects
-const classInfo = {
-    Aman: {
-        grade: "A+",
-        city: "Delhi"
-    },
-    shradha: {
-        grade: "A",
-        city: "Pune"
-    },
-    Karan: {
-        grade: "0",
-        city: "Mumbai"
-    }
-};
-console.log(classInfo);
-console.log(classInfo.Karan["grade"]);
+//Print a poem
+function printPoem() {
+    console.log("Twinkle Twinle");
+    console.log("Little Star");
+}
+printPoem();
 
+//Roll a dice
+function rollDice() {
+    console.log(Math.floor(Math.random() * 5) + 1);
+}
+rollDice();
 
-//Array of Objects
+//Function with argument
+function printInfo(name, age) {
+    console.log(`${name}'s age is ${age}`);
+}
+printInfo("Kowsar", 23);
 
-const studentInfo = [{
-    name: "aman",
-    grade: "A+",
-    city: "Delhi"
-}, {
-    name: "Shradha",
-    grade: "A",
-    city: "Pune"
-}, {
-    name: "Karan",
-    grade: "0",
-    city: "Mumbai"
-}];
-console.log(studentInfo);
-
-//Random Integer
-
-let rand = Math.random();
-rand = rand * 10;
-rand = Math.floor(rand);
-rand = rand + 1;
-console.log(rand);
-
-console.log(Math.floor(Math.random() * 10) + 1); //Create arandom integer number
-
-//Practice Question-Q1
-console.log(Math.floor(Math.random() * 100) + 1);
-
-//Practice Question-Q2
-console.log(Math.floor(Math.random() * 5) + 1);
-
-//Guess Game
-const max = prompt("Enter your guessing number");
-const random = Math.floor(Math.random() * max) + 1;
-let guess = prompt("Guess your number");
-while (true) {
-    if (guess == "quit") {
-        console.log("User Quit !!");
-        break;
-    }
-    if (guess == random) {
-        console.log(`You are Right !! Random value is : ${random}`);
-        break;
-    } else if (guess < random) {
-        guess = prompt("Your guess was too small !!! Try another one");
-    } else {
-        guess = prompt("Your guess was too large !!! Try another one");
+//Print Mulitplication Table
+function mulTable(n) {
+    for (let i = 1; i < 11; i += 1) {
+        console.log(`${n} x ${i} = ${n*i}`);
     }
 }
+mulTable(5);
+
+//Return sum from 1 to n
+let add = 0;
+
+function sum(n) {
+    for (let i = 0; i < n + 1; i++) {
+        add += i;
+    }
+    return add;
+}
+console.log(sum(10));
+
+//Contatinate a string
+let str = ['Md', 'Kowsar', 'Hossain'];
+
+function concat(str) {
+    let result;
+    for (let i = 0; i < str.length; i++) {
+        result += str[i];
+    }
+    return result;
+}
+console.log(concat(str));
+
+//Assignment Question
+//Q-1
+let arr = [2, 5, 4, 6, 7, 8, 9, 6];
+let num = 5;
+
+function findLarge(arr, num) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > num) {
+            console.log(arr[i]);
+        }
+    }
+}
+findLarge(arr, num);
+
+//Q-2
+let stri = 'abcdabcdefgggh';
+
+function uniqueChar(str) {
+    let final = " ";
+    for (let i = 0; i < stri.length; i++) {
+        let char = stri[i];
+        if (final.indexOf(char) == -1) {
+            final += char;
+
+        }
+    }
+    console.log(final);
+}
+uniqueChar(stri);
+
+//Q-3
+let country = ["Australia", "Germany", "UnitedStatesofAmerica"];
+
+function longestCountry(country) {
+    let ansIdx = 0;
+    for (let i = 0; i < country.length; i++) {
+        let ansLen = country[ansIdx].length;
+        let currlen = country[i].length;
+        if (currlen > ansLen) {
+            ansIdx = i;
+        }
+    }
+    console.log(ansIdx);
+}
+longestCountry(country);
+
+//Q-4
+let name = 'kowsarhossain';
+
+function countVowel(name) {
+    let count = 0;
+    for (let i = 0; i < name.length; i++) {
+        if (name[i] == 'a' || name[i] == 'e' || name[i] == 'i' || name[i] == 'o' || name[i] == 'u') {
+            count++;
+        }
+    }
+    console.log(count);
+}
+countVowel(name);
+
+//Q-5
+let start = 100;
+let end = 200;
+
+function genarateRandom(start, end) {
+    let diff = end - start;
+    console.log(Math.floor(Math.random() * diff) + start);
+}
+genarateRandom(start, end);
