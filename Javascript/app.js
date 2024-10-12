@@ -1,125 +1,72 @@
-function hello() {
-    console.log("Hello");
-}
-
-hello();
-
-//Print a poem
-function printPoem() {
-    console.log("Twinkle Twinle");
-    console.log("Little Star");
-}
-printPoem();
-
-//Roll a dice
-function rollDice() {
-    console.log(Math.floor(Math.random() * 5) + 1);
-}
-rollDice();
-
-//Function with argument
-function printInfo(name, age) {
-    console.log(`${name}'s age is ${age}`);
-}
-printInfo("Kowsar", 23);
-
-//Print Mulitplication Table
-function mulTable(n) {
-    for (let i = 1; i < 11; i += 1) {
-        console.log(`${n} x ${i} = ${n*i}`);
+//this-keyword
+const student = {
+    name: "kowsar",
+    age: "23",
+    math: 95,
+    phy: 86,
+    chem: 93,
+    getAvg() {
+        console.log(this);
+        let avg = (this.math + this.phy + this.chem) / 3;
+        console.log(`${this.name} got average marks =${avg}`);
     }
+};
+
+function getAvg() {
+    console.log(this); //window object
 }
-mulTable(5);
 
-//Return sum from 1 to n
-let add = 0;
-
-function sum(n) {
-    for (let i = 0; i < n + 1; i++) {
-        add += i;
-    }
-    return add;
+//try catch
+try {
+    console.log(a);
+} catch (err) {
+    console.log("a is not defined");
+    // console.log(err);
 }
-console.log(sum(10));
 
-//Contatinate a string
-let str = ['Md', 'Kowsar', 'Hossain'];
+//Arrow function
+const sum = (a, b) => {
+    console.log(a + b);
+};
+sum(2, 3);
 
-function concat(str) {
-    let result;
-    for (let i = 0; i < str.length; i++) {
-        result += str[i];
-    }
-    return result;
-}
-console.log(concat(str));
+//Implicit function
+const mul = (x, y) => (x * y);
+mul(4, 5);
 
-//Assignment Question
+//practice Question
 //Q-1
-let arr = [2, 5, 4, 6, 7, 8, 9, 6];
-let num = 5;
-
-function findLarge(arr, num) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > num) {
-            console.log(arr[i]);
-        }
-    }
-}
-findLarge(arr, num);
+const square = (n) => (n * n);
+square(5);
 
 //Q-2
-let stri = 'abcdabcdefgggh';
+let id = setInterval(() => {
+    console.log("Hello World")
+}, 2000);
 
-function uniqueChar(str) {
-    let final = " ";
-    for (let i = 0; i < stri.length; i++) {
-        let char = stri[i];
-        if (final.indexOf(char) == -1) {
-            final += char;
+setTimeout(() => {
+    clearInterval(id)
+}, 10000);
 
-        }
+//Assignment Question
+let arr = [1, 3, 5, 6, 7, 8];
+
+const arrayAverage = (arr) => {
+    let sum = 0;
+    for (let number of arr) {
+        sum += number;
     }
-    console.log(final);
-}
-uniqueChar(stri);
+    return sum / arr.length;
+};
+console.log(arrayAverage(arr));
 
-//Q-3
-let country = ["Australia", "Germany", "UnitedStatesofAmerica"];
-
-function longestCountry(country) {
-    let ansIdx = 0;
-    for (let i = 0; i < country.length; i++) {
-        let ansLen = country[ansIdx].length;
-        let currlen = country[i].length;
-        if (currlen > ansLen) {
-            ansIdx = i;
-        }
+//Q-2
+const isEven = (n) => {
+    if (n % 2 == 0) {
+        return 'even';
+    } else {
+        return 'Not even';
     }
-    console.log(ansIdx);
-}
-longestCountry(country);
-
-//Q-4
-let name = 'kowsarhossain';
-
-function countVowel(name) {
-    let count = 0;
-    for (let i = 0; i < name.length; i++) {
-        if (name[i] == 'a' || name[i] == 'e' || name[i] == 'i' || name[i] == 'o' || name[i] == 'u') {
-            count++;
-        }
-    }
-    console.log(count);
-}
-countVowel(name);
-
-//Q-5
-let start = 100;
-let end = 200;
-
-function genarateRandom(start, end) {
-    let diff = end - start;
-    console.log(Math.floor(Math.random() * diff) + start);
-}
-genarateRandom(start, end);
+};
+let n = 7;
+console.log(isEven(n));
