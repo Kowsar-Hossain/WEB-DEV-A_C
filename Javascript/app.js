@@ -1,49 +1,35 @@
-//Class-09
-//Practice Question
+// //Todo list
 
-let p = document.createElement("p");
-p.innerText = "Hey I'm red!";
-document.querySelector("body").append(p);
+let inp = document.querySelector("input");
+let btn = document.querySelector("button");
+let ul = document.querySelector("ul");
 
-p.classList.add("red");
+btn.addEventListener("click", function() {
+    let item = document.createElement("li");
+    item.innerText = inp.value;
 
-let h3 = document.createElement("h3");
-h3.innerText = "I'm a blue h3";
-document.querySelector("body").append(h3);
+    let delBtn = document.createElement("button");
+    delBtn.innerText = "delete";
+    delBtn.classList.add("delete");
 
-h3.classList.add("blue");
+    item.appendChild(delBtn);
+    ul.appendChild(item);
+    inp.value = "";
+});
 
-let div = document.createElement("div");
-let h1 = document.createElement("h1");
-let para = document.createElement("p");
+ul.addEventListener("click", function(event) {
+    if (event.target.nodeName == "BUTTON") {
+        let listItem = event.target.parentElement;
+        listItem.remove();
+        console.log("deleted");
+    }
+});
 
-h1.innerText = "I'm in a div";
-para.innerText = "ME TOO";
-
-div.append(h1);
-div.append(para);
-
-div.classList.add("box");
-document.querySelector("body").append(div);
-
-
-//Assignment Question-1
-let input = document.createElement("input");
-let button = document.createElement("button");
-
-button.innerText = "Click me";
-document.querySelector("body").append(input);
-document.querySelector("body").append(button);
-
-//Assignment Question-2
-input.setAttribute("placeholder", "username");
-btn.setAttribute("id", "btn");
-
-//Assignment Question-3
-let btn = document.querySelector("#btn");
-btn.classList.add("btnStyle");
-
-//Assignment Question-3
-let h = document.createElement("h1");
-h.innerHTML = "<u>DOM Practice</u>";
-document.querySelector("body").append(h);
+// let delBtns = document.querySelectorAll(".delete");
+// for (delBtn of delBtns) {
+//     delBtn.addEventListener("click", function() {
+//         let par = this.parentElement;
+//         console.log(par);
+//         par.remove();
+//     })
+// }
