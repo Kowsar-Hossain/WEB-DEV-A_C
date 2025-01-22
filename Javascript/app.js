@@ -1,83 +1,86 @@
-let gameSeq = [];
-let userSeq = [];
-let btns = ["yellow", "red", "purple", "green"];
+//Class-11
 
-let started = false;
-let level = 0;
-let h2 = document.querySelector("h2");
+let h1 = document.querySelector("h1");
 
-document.addEventListener("click", function() {
-    if (started == false) {
-        console.log("Game started");
-        started = true;
+// function colorChange(color, delay, nextColorChange) {
+//     setTimeout(() => {
+//         h1.style.color = color;
+//         if (nextColorChange) nextColorChange();
+//     }, delay);
+// }
 
-        levelUp();
-    }
-});
+// colorChange("red", 1000, () => {
+//     colorChange("orange", 1000, () => {
+//         colorChange("blue", 1000);
+//     });
+// });
 
-function gameFlash(btn) {
-    btn.classList.add("flash");
-    setTimeout(function() {
-        btn.classList.remove("flash");
-    }, 250);
+
+function colorChange(color, delay) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            h1.style.color = color;
+            resolve("Color Changed");
+        }, delay);
+    })
 }
 
-function userFlash(btn) {
-    btn.classList.add("userFlash");
-    setTimeout(function() {
-        btn.classList.remove("userFlash");
-    }, 250);
-}
+colorChange("red", 1000)
+    .then(() => {
+        console.log("red color completed");
+        return colorChange("blue", 2000);
+    })
+    .then(() => {
+        console.log("Blue color Comoleted");
+        return colorChange("yellow", 5000);
+    })
+    .then(() => {
+        console.log("Yellow color Changed");
+    })
+    .catch(() => {
+        console.log("Color not Changed !!");
+    })
 
-function levelUp() {
-    userSeq = [];
-    level++;
-    h2.innerText = `Level ${level}`;
 
-    let randIdx = Math.floor(Math.random() * 3);
-    let randColor = btns[randIdx];
-    let randBtn = document.querySelector(`.${randColor}`);
-    gameSeq.push(randColor);
-    console.log(gameSeq);
+//Callback Hell
+// function saveToDb(data, success, failure) {
+//     let internetSpeed = Math.floor(Math.random() * 10) + 1;
+//     if (internetSpeed > 4) {
+//         success();
+//     } else {
+//         failure();
+//     }
+// }
 
-    gameFlash(randBtn);
-}
+// saveToDb("apna College", () => {
+//     console.log("Successfully saved data");
+//     saveToDb("Hello World", () => {
+//         console.log("SuccessFull2");
+//     }, () => {
+//         console.log("Weak Connection2");
+//     })
+// }, () => {
+//     console.log("Failure !! Weak Connection");
+// })
 
-function checkAns(idx) {
+//Promises
 
-    if (userSeq[idx] === gameSeq[idx]) {
-        if (userSeq.length == gameSeq.length) {
-            setTimeout(levelUp, 1000);
+function saveToDb(data) {
+    return new Promise((resolve, reject) => {
+        let internetSpeed = Math.floor(Math.random() * 10) + 1;
+        if (internetSpeed > 4) {
+            resolve("Data was saved");
+        } else {
+            reject("Weak Connection !!");
         }
-    } else {
-        console.log("game end");
-        h2.innerHTML = `Game Over ! Your score was <b>${level}</b> <br>Press any key to start`;
-        document.querySelector("body").style.backgroundColor = "red";
-        setTimeout(function() {
-            document.querySelector("body").style.backgroundColor = "white";
-        }, 150);
-        //reset();
-    }
+    });
 }
 
-function btnpress() {
-    let btn = this;
-    userFlash(btn);
-
-    userColor = btn.getAttribute("id");
-    userSeq.push(userColor);
-
-    checkAns(userSeq.length - 1);
-}
-
-let allBtns = document.querySelectorAll(".btn");
-for (btn of allBtns) {
-    btn.addEventListener("click", btnpress);
-}
-
-function reset() {
-    started = false;
-    gameSeq = [];
-    userSeq = [];
-    level = 0;
-}
+//using then & catch method
+saveToDb("Apna College")
+    .then(() => {
+        console.log("Data was saved");
+    })
+    .catch(() => {
+        console.log("Data was rejected");
+    })
